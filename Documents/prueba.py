@@ -1,8 +1,20 @@
+<<<<<<< HEAD
 import numpy as np
 from matplotlib import pyplot as plt
 
 MaxRen = 35
 MaxCol = 35
+=======
+#!/usr/bin/env python
+#ImageMove
+
+import cv2
+import numpy as np
+
+
+B = [[1, 1, 1, 1, 1], [2, 2, 2, 2, 2], [3, 3, 3, 3, 3], [4, 4, 4, 4, 4],[5, 5, 5, 5, 5]]
+
+>>>>>>> 18101b074938788bd55982eb31beb23f6e663bf6
 
 felix = [[1,1,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1],
 [1,1,1,1,1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,1,1,1,1,1,1,1,1,1],
@@ -42,6 +54,7 @@ felix = [[1,1,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1]
 
 
 
+<<<<<<< HEAD
 def invertircolores(felix):
     for i in range(len(felix)):
         for j in range(len(felix[0])):
@@ -143,3 +156,132 @@ plt.show
 felix = np.matrix(felix)
 plt.imshow(felix)
 plt.show()
+=======
+
+
+
+
+
+
+
+
+
+def RotateLeft(A):
+	New = [[0 for x in range(len(A))] for y in range(len(A[0]))]
+
+	for num in range(len(New)):
+		for element in range(len(New[num])):
+			New[num].pop()
+
+
+	for num in range(len(A[0])):
+		for row in A:
+			
+			New[num].append(row[num])
+
+	
+
+	print ("Rotated: ")
+	for line in New:
+		print (line)
+
+
+	return New
+
+def VertFlip(A):
+	New = []
+	for num in range(len(New)):
+		for element in range(len(New[num])):
+			New[num].pop()
+
+
+	for line in A[::-1]:
+		New.append(line)
+
+	print ("Vertical Flip: ")
+	for line in New:
+		print (line)
+
+	return New
+
+
+def VertMirror(A):
+	New = []
+	for num in range(len(New)):
+		for element in range(len(New[num])):
+			New[num].pop()
+
+
+	for line in A[::-1]:
+		New.append(line)
+
+	print ("Vertical Mirror: ")
+	for line in New:
+		print (line)
+
+	print ("___________________")
+
+	for line in A:
+		print (line)
+
+	return New
+
+def HorMirror(A):
+	New = []
+	for num in range(len(New)):
+		for element in range(len(New[num])):
+			New[num].pop()
+
+
+	for line in A:
+		New.append(line[::-1])
+
+	print ("Horizontal Mirror: ")
+	for num in range(len(A)):
+		print (A[num] + ["|"] + New[num] )
+
+	return New
+
+def HorFlip(A):
+	New = []
+	for num in range(len(New)):
+		for element in range(len(New[num])):
+			New[num].pop()
+
+
+	for line in A:
+		New.append(line[::-1])
+
+	print ("Horizontal Flip: ")
+	for line in New:
+		print (line)
+
+	return New
+
+def ColorChange(A):
+
+	print("Inverted Colors: ")
+
+	for line in range(len(A)):
+		count = 0
+		for number in A[line]:
+			if number > 150:
+				A[line].pop(count)
+				A[line].insert(count, 0)
+				count += 1
+			elif number <= 150:
+				A[line].pop(count)
+				A[line].insert(count, 255)
+				count += 1
+
+	for line in A:
+		print (line)
+
+	return A
+
+def RotateRight(A):
+	return RotateLeft(A[::-1])
+
+
+	
+>>>>>>> 18101b074938788bd55982eb31beb23f6e663bf6
